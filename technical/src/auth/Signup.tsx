@@ -1,11 +1,14 @@
-
 import React from 'react';
 
-const Login: React.FC = () => {
+const Signup: React.FC = () => {
     return (
         <div style={styles.container}>
-            <h2 style={styles.heading}>Login</h2>
+            <h2 style={styles.heading}>Signup</h2>
             <form style={styles.form}>
+                <label style={styles.label}>
+                    Name:
+                    <input type="text" style={styles.input} required />
+                </label>
                 <label style={styles.label}>
                     Email:
                     <input type="email" style={styles.input} required />
@@ -14,7 +17,11 @@ const Login: React.FC = () => {
                     Password:
                     <input type="password" style={styles.input} required />
                 </label>
-                <button type="submit" style={styles.submitButton}>Login</button>
+                <label style={styles.label}>
+                    Confirm Password:
+                    <input type="password" style={styles.input} required />
+                </label>
+                <button type="submit" style={styles.submitButton}>Signup</button>
             </form>
         </div>
     );
@@ -58,4 +65,4 @@ const styles: { [key: string]: React.CSSProperties } = {
     },
 };
 
-export default Login;
+export default Signup;

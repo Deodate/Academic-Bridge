@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
+import Login from '@/auth/Login';
+import Signup from '@/auth/Signup';
 
 const Home: React.FC = () => {
     return (
