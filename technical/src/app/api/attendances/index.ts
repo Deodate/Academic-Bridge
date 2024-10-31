@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Attendance } from '../../../types/Attendance';
+import { sendEmail } from '@/utils/emailService';
 
 let attendances: Attendance[] = [];
 
