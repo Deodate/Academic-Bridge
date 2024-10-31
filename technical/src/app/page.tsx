@@ -3,96 +3,109 @@ import React from 'react';
 const Home: React.FC = () => {
     return (
         <div style={styles.body}>
+            <header style={styles.header}>
+                <img src="logo.png" alt="Academic Bridge" style={styles.logo} />
+                <nav style={styles.nav}>
+                    <a href="/" style={styles.navLink}>Home</a>
+                    <a href="/features" style={styles.navLink}>Features</a>
+                    <a href="/impact" style={styles.navLink}>Impact</a>
+                    <a href="/faq" style={styles.navLink}>FAQs</a>
+                    <a href="/contacts" style={styles.navLink}>Contacts</a>
+                </nav>
+                <button style={styles.loginButton}>Login</button>
+            </header>
             <div style={styles.container}>
-                <h2 style={styles.heading}>Academic Bridge
-</h2>
-                <form style={styles.formContainer} id="login-form">
-                    <div style={styles.inputGroup}>
-                        <label htmlFor="email" style={styles.label}>Email</label>
-                        <input type="email" id="email" name="email" required placeholder="janedoe@mail.com" style={styles.input} />
-                    </div>
-                    <div style={styles.inputGroup}>
-                        <label htmlFor="password" style={styles.label}>Password</label>
-                        <input type="password" id="password" name="password" required placeholder="enter your password" style={styles.input} />
-                    </div>
-                    <button type="submit" style={styles.button}>Log in</button>
-                </form>
-                <div style={styles.linksContainer}>
-                    <a href="/signup" style={styles.link}>Create an account</a>
-                    <a href="/forgot-password" style={styles.link}>Forgot password?</a>
+                <h1 style={styles.mainHeading}>Digitizing Africa's Education Systems</h1>
+                <p style={styles.subtitle}>
+                    We envision a future where every school in Africa is fully digitized for both academic and non-academic processes.
+                </p>
+                <div style={styles.buttonContainer}>
+                    <button style={styles.studentButton}>Student Login</button>
+                    <button style={styles.parentButton}>Parent Login</button>
                 </div>
             </div>
         </div>
     );
 };
 
-// Define styles with React.CSSProperties type
 const styles: { [key: string]: React.CSSProperties } = {
     body: {
-        margin: 0,
         fontFamily: 'Arial, sans-serif',
-        backgroundColor: 'linear-gradient(180deg, #007BFF, #6C63FF)', // Gradient background
         color: 'black',
+        backgroundColor: '#f8f9fa',
+        minHeight: '100vh',
         display: 'flex',
-        justifyContent: 'center',
+        flexDirection: 'column',
         alignItems: 'center',
-        height: '100vh',
     },
-    container: {
+    header: {
         width: '100%',
-        maxWidth: '350px',
-        padding: '30px',
-        backgroundColor: '#FFFFFF',
-        borderRadius: '12px',
-        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-        textAlign: 'center',
-    },
-    heading: {
-        fontSize: '1.5em',
-        marginBottom: '20px',
-        color: '#000',
-    },
-    formContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    inputGroup: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginBottom: '15px',
-        textAlign: 'left',
-    },
-    label: {
-        fontSize: '0.9em',
-        color: '#333',
-        marginBottom: '5px',
-    },
-    input: {
-        padding: '10px',
-        borderRadius: '6px',
-        border: '1px solid #ccc',
-        fontSize: '1em',
-        backgroundColor: '#F9F9F9',
-    },
-    button: {
-        padding: '10px',
-        borderRadius: '6px',
-        border: 'none',
-        color: '#FFFFFF',
-        backgroundColor: '#000',
-        cursor: 'pointer',
-        fontSize: '1em',
-        marginTop: '15px',
-    },
-    linksContainer: {
-        marginTop: '15px',
         display: 'flex',
         justifyContent: 'space-between',
-        fontSize: '0.9em',
+        alignItems: 'center',
+        padding: '20px',
+        boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+        backgroundColor: '#fff',
     },
-    link: {
-        color: '#0000EE',
+    logo: {
+        height: '40px',
+    },
+    nav: {
+        display: 'flex',
+        gap: '20px',
+    },
+    navLink: {
         textDecoration: 'none',
+        color: '#333',
+        fontSize: '1em',
+        fontWeight: 'bold',
+    },
+    loginButton: {
+        backgroundColor: '#007BFF',
+        color: '#fff',
+        padding: '10px 20px',
+        borderRadius: '5px',
+        border: 'none',
+        cursor: 'pointer',
+    },
+    container: {
+        textAlign: 'center',
+        maxWidth: '600px',
+        padding: '40px',
+    },
+    mainHeading: {
+        fontSize: '2em',
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    subtitle: {
+        fontSize: '1.1em',
+        color: '#555',
+        marginBottom: '20px',
+    },
+    buttonContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '20px',
+        marginTop: '20px',
+    },
+    studentButton: {
+        backgroundColor: '#28a745',
+        color: '#fff',
+        padding: '10px 20px',
+        borderRadius: '5px',
+        border: 'none',
+        cursor: 'pointer',
+        fontWeight: 'bold',
+    },
+    parentButton: {
+        backgroundColor: '#007BFF',
+        color: '#fff',
+        padding: '10px 20px',
+        borderRadius: '5px',
+        border: 'none',
+        cursor: 'pointer',
+        fontWeight: 'bold',
     },
 };
 
