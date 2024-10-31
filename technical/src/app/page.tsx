@@ -1,27 +1,32 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+
 
 const Home: React.FC = () => {
     return (
         <div style={styles.body}>
             <header style={styles.header}>
-                <img src="logo.png" alt="Academic Bridge" style={styles.logo} />
+                <img src="Logos.png" alt="Academic Bridge" style={styles.logo} />
                 <nav style={styles.nav}>
-                    <a href="/" style={styles.navLink}>Home</a>
-                    <a href="/features" style={styles.navLink}>Features</a>
-                    <a href="/impact" style={styles.navLink}>Impact</a>
-                    <a href="/faq" style={styles.navLink}>FAQs</a>
+                    <a href="/" style={styles.navLink}>HOME</a>
+                    <a href="/features" style={styles.navLink}>SUPPORTED PROGRAMS</a>
+                    <a href="/impact" style={styles.navLink}>FEATURES</a>
+                    <a href="/faq" style={styles.navLink}>IMPACT</a>
+                    <a href="/faq" style={styles.navLink}>FAQS</a>
+                    <a href="/faq" style={styles.navLink}>E-LEARNING</a>
                     <a href="/contacts" style={styles.navLink}>Contacts</a>
                 </nav>
-                <button style={styles.loginButton}>Login</button>
+                <Link to="/Login" style={styles.loginButton}>Login</Link>
             </header>
             <div style={styles.container}>
                 <h1 style={styles.mainHeading}>Digitizing Africa's Education Systems</h1>
-                <p style={styles.subtitle}>
+                <p style={styles.subtitle}><br></br>
                     We envision a future where every school in Africa is fully digitized for both academic and non-academic processes.
-                </p>
+                </p><br></br>
                 <div style={styles.buttonContainer}>
                     <button style={styles.studentButton}>Student Login</button>
-                    <button style={styles.parentButton}>Parent Login</button>
+                    <button style={styles.parentButton}>Student Signup</button>
                 </div>
             </div>
         </div>
@@ -61,9 +66,9 @@ const styles: { [key: string]: React.CSSProperties } = {
         fontWeight: 'bold',
     },
     loginButton: {
-        backgroundColor: '#007BFF',
+        backgroundColor: '#0058a9',
         color: '#fff',
-        padding: '10px 20px',
+        padding: '4px 15px',
         borderRadius: '5px',
         border: 'none',
         cursor: 'pointer',
@@ -93,16 +98,16 @@ const styles: { [key: string]: React.CSSProperties } = {
         backgroundColor: '#28a745',
         color: '#fff',
         padding: '10px 20px',
-        borderRadius: '5px',
+        borderRadius: '50px',
         border: 'none',
         cursor: 'pointer',
         fontWeight: 'bold',
     },
     parentButton: {
-        backgroundColor: '#007BFF',
+        backgroundColor: '#0058a9',
         color: '#fff',
         padding: '10px 20px',
-        borderRadius: '5px',
+        borderRadius: '50px',
         border: 'none',
         cursor: 'pointer',
         fontWeight: 'bold',
