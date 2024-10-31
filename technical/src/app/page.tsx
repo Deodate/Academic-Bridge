@@ -1,48 +1,43 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Login from '@/auth/Login';
-import Signup from '@/auth/Signup';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import RequestPasswordReset from '@/auth/RequestPasswordReset';
+import ResetPassword from '@/auth/resetPassword';
 
-const Home: React.FC = () => {
+
+const App: React.FC = () => {
     return (
-        <div style={styles.body}>
-            <header style={styles.header}>
-                <img src="Logos.png" alt="Academic Bridge" style={styles.logo} />
-                <nav style={styles.nav}>
-                    <a href="/" style={styles.navLink}>HOME</a>
-                    <a href="/features" style={styles.navLink}>SUPPORTED PROGRAMS</a>
-                    <a href="/impact" style={styles.navLink}>FEATURES</a>
-                    <a href="/faq" style={styles.navLink}>IMPACT</a>
-                    <a href="/faq" style={styles.navLink}>FAQS</a>
-                    <a href="/faq" style={styles.navLink}>E-LEARNING</a>
-                    <a href="/contacts" style={styles.navLink}>Contacts</a>
-                </nav>
-                <Link to="/Login" style={styles.loginButton}>Login</Link>
-            </header>
-            <div style={styles.container}>
-                <h1 style={styles.mainHeading}>Digitizing Africa's Education Systems</h1>
-                <p style={styles.subtitle}><br></br>
-                    We envision a future where every school in Africa is fully digitized for both academic and non-academic processes.
-                </p><br></br>
-                <div style={styles.buttonContainer}>
-                    <button style={styles.studentButton}>Student Login</button>
-                    <button style={styles.parentButton}>Student Signup</button>
-                </div>
+        <Router>
+            <div>
+                <header style={styles.header}>
+                    <img src="Logos.png" alt="Academic Bridge" style={styles.logo} />
+                    <nav style={styles.nav}>
+                        <Link to="/" style={styles.navLink}>HOME</Link>
+                        <Link to="/features" style={styles.navLink}>SUPPORTED PROGRAMS</Link>
+                        <Link to="/impact" style={styles.navLink}>FEATURES</Link>
+                        <Link to="/impact" style={styles.navLink}>IMPACT</Link>
+                        <Link to="/faq" style={styles.navLink}>FAQS</Link>
+                        <Link to="/e-learning" style={styles.navLink}>E-LEARNING</Link>
+                        <Link to="/contacts" style={styles.navLink}>Contacts</Link>
+                    </nav>
+                    <Link to="/Login" style={styles.loginButton}>Login</Link>
+                </header>
+                
+                <Routes>
+                
+                    <Route path="/request-password-reset" element={<RequestPasswordReset />} />
+                    <Route path="/reset-password/:token" element={<ResetPassword />} />
+                    {/* Add other routes for your application here */}
+                </Routes>
+                
+                <footer style={styles.footer}>
+                    {/* You can add footer content here if needed */}
+                </footer>
             </div>
-        </div>
+        </Router>
     );
 };
 
 const styles: { [key: string]: React.CSSProperties } = {
-    body: {
-        fontFamily: 'Arial, sans-serif',
-        color: 'black',
-        backgroundColor: '#f8f9fa',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
     header: {
         width: '100%',
         display: 'flex',
@@ -72,46 +67,13 @@ const styles: { [key: string]: React.CSSProperties } = {
         borderRadius: '5px',
         border: 'none',
         cursor: 'pointer',
+        textDecoration: 'none', 
     },
-    container: {
+    footer: {
+       
+        padding: '20px',
         textAlign: 'center',
-        maxWidth: '600px',
-        padding: '40px',
-    },
-    mainHeading: {
-        fontSize: '2em',
-        fontWeight: 'bold',
-        color: '#333',
-    },
-    subtitle: {
-        fontSize: '1.1em',
-        color: '#555',
-        marginBottom: '20px',
-    },
-    buttonContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '20px',
-        marginTop: '20px',
-    },
-    studentButton: {
-        backgroundColor: '#28a745',
-        color: '#fff',
-        padding: '10px 20px',
-        borderRadius: '50px',
-        border: 'none',
-        cursor: 'pointer',
-        fontWeight: 'bold',
-    },
-    parentButton: {
-        backgroundColor: '#0058a9',
-        color: '#fff',
-        padding: '10px 20px',
-        borderRadius: '50px',
-        border: 'none',
-        cursor: 'pointer',
-        fontWeight: 'bold',
     },
 };
 
-export default Home;
+export default App;
