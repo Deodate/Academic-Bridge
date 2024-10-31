@@ -4,7 +4,6 @@ import EmployeeList from '../components/EmployeeList';
 import AttendanceForm from '../components/AttendanceForm';
 import AttendanceReport from '../components/AttendanceReport';
 // import { Employee } from './types/Employee';
-import { Attendance } from '../types/Attendance';
 import axios from 'axios';
 
 const Employees: React.FC = () => {
